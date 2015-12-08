@@ -1,0 +1,30 @@
+</br>
+<h3>Current Codes</h3>
+<div class="center jumbotron">
+<table class="table table-hover" >
+  <thead>
+  <tr>
+    <th>Log In Code</th>
+    <th>Search Options</th>
+    <th>Query Suggestion</th>
+    <th>Search Intent</th>
+    <th>Times Used</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead> 
+  <tbody>
+  <% Code.find_each do |code| %>
+    <tr>
+      <td><%= code.logInCode %></td>
+      <td><%= code.searchOption %></td>
+      <td><%= code.querySuggestion %></td>
+      <td><%= code.search_intent %></td>
+      <td><%= code.timesUsed %></td>
+      <td><%= link_to 'Destroy', code_path(code),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>

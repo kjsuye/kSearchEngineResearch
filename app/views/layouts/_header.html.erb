@@ -1,0 +1,21 @@
+<header class="navbar navbar-fixed-top navbar-default">
+  <div class="container">
+    <div id="logo" >Kid's Search Engine</div>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if student_logged_in? %>
+          <li><%= link_to "Log Out", student_logout_path, method: "delete" %></li>
+        <% elsif admin_logged_in? %>
+          <li class="<%= 'active' if current_page?(admin_user_manage_path) %>">
+              <%= link_to "Manage", admin_user_manage_path(current_admin_user.id) %></li>
+          <li class="<%= 'active' if current_page?(admin_user_path) %>">
+              <%= link_to "Data", admin_user_path(current_admin_user.id) %></li>
+          <li><%= link_to "Admin Log Out", admin_logout_path, method: "delete" %></li>
+        <% else %>
+          <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+          <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

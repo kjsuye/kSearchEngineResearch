@@ -1,0 +1,53 @@
+<script>
+  (function() {
+    var cx = '000177987223272125020:4z21ktdyx88';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<!-- </br></br></br>
+<div class="center jumbotron">
+  <gcse:searchbox></gcse:searchbox>
+</div>
+  <gcse:searchresults></gcse:searchresults>
+-->
+
+</br>
+</br>
+  <%= render 'queries/form'%>
+</br></br>
+
+  <hr class="col-md-10 col-md-offset-1" />
+
+<div class="row" >
+<div class="col-md-6 col-md-offset-2" >
+  <table>
+    <thead>
+    </thead>
+    <tbody>
+    <% if !get_search_results.nil? %>
+      <% get_search_results.each do |result| %>
+      <tr>
+        <td><%= link_to result["htmlTitle"].html_safe, result["link"], class: "title" %></td>
+      </tr>
+      <tr>
+        <td><%= result["htmlFormattedUrl"].html_safe %></td>
+      </tr>
+      <tr>
+        <td><%= result["htmlSnippet"].html_safe %></td>
+      </tr>
+      <tr>
+        <td><%= "</br>".html_safe %></td>
+      </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
+

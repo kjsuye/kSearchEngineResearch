@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  logInCode: MyString
+  searchOption: MyString
+  querySuggestion: MyString
+  age: 1
+  grade: MyString
+  school: MyString
+
+two:
+  logInCode: MyString
+  searchOption: MyString
+  querySuggestion: MyString
+  age: 1
+  grade: MyString
+  school: MyString
