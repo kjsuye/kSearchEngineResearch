@@ -19,7 +19,6 @@
   <% StudentUser.find_each do |student| %>
     <% student.queries.each do |query| %>
     <tr>
-      <td class="filterable-cell"><%= student.id %></td>
       <td class="filterable-cell"><%= student.logInCode %></td>
       <td class="filterable-cell"><%= student.searchOption %></td>
       <td class="filterable-cell"><%= student.querySuggestion %></td>
