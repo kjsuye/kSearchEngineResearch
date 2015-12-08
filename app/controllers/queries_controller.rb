@@ -23,6 +23,7 @@ class QueriesController < ApplicationController
 
       @query = @student_user.queries.create(updated_params)
       if @query
+        session[:beginQueryString] = originalQueryString
         session[:pastQueryString] = actualSearchQuery
         @response = GoogleCustomSearch.execute_query(actualSearchQuery)
       else

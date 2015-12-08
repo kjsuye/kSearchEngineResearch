@@ -20,6 +20,7 @@ module StudentSessionsHelper
   def student_log_out
     session.delete(:student_user_id)
     session.delete(:pastQueryString)
+    session.delete(:beginQueryString)
     @current_student_user = nil
     GoogleCustomSearch.clear_results
   end
