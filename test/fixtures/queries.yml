@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  queryString: MyString
+  topLinks: 
+  linksClicked: 
+  student_user_id: 
+
+two:
+  queryString: MyString
+  topLinks: 
+  linksClicked: 
+  student_user_id: 

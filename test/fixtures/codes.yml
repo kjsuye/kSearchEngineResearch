@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  logInCode: MyString
+  searchOption: MyString
+  querySuggestion: MyString
+  timesUsed: 
+
+two:
+  logInCode: MyString
+  searchOption: MyString
+  querySuggestion: MyString
+  timesUsed: 

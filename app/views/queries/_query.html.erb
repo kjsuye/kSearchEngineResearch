@@ -1,0 +1,40 @@
+</br>
+<div class="center jumbotron">
+<table class="tableScroll table-hover" >
+  <thead>
+  <tr>
+    <th>Code</th>
+    <th>Search Option</th>
+    <th>Query Suggestion</th>
+    <th>Search Intent</th>
+    <th>Grade</th>
+    <th>Start Time</th>
+    <th>Session ID </th>
+    <th>Original Query</th>
+    <th>Updated Query</th>
+    <th>Time Query Submitted</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% StudentUser.find_each do |student| %>
+    <% student.queries.each do |query| %>
+    <tr>
+      <td class="filterable-cell"><%= student.id %></td>
+      <td class="filterable-cell"><%= student.logInCode %></td>
+      <td class="filterable-cell"><%= student.searchOption %></td>
+      <td class="filterable-cell"><%= student.querySuggestion %></td>
+      <td class="filterable-cell"><%= student.search_intent %></td>
+      <td class="filterable-cell"><%= student.grade %></td>
+      <td class="filterable-cell"><%= student.created_at %></td> 
+      <td class="filterable-cell"><%= student.id %></td> 
+      <td class="filterable-cell"><%= query.originalQueryString %></td>
+      <td class="filterable-cell"><%= query.updatedQueryString %></td>
+      <td class="filterable-cell"><%= query.created_at %></td>
+    </tr>
+
+    <% end %>
+  <% end %>
+
+  </tbody>
+</table>
+</div>

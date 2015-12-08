@@ -1,0 +1,32 @@
+<h3>Create New Code</h3>
+<div class="center jumbotron">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for Code.new do |f| %>
+
+      <%= f.label :"Log In Code" %>
+      <%= f.text_field :logInCode, class: 'form-control' %>
+
+      </br>
+      <%= f.label :"Search Option" %>
+<% if false %>
+      <%= f.text_field :searchOption, class: 'form-control' %>
+<% end %>
+      </br>
+      <%= f.select :searchOption, options_for_select(['google','other']), {:prompt => "Select an option "}, {class: "form-control"} %>
+
+      </br>
+      <%= f.label :"Query Suggestion" %>
+      </br>
+      <%= f.select :querySuggestion, options_for_select(['enabled','disabled']), {:prompt => "Select an option"}, {class: "form-control"} %>
+      </br>
+      <%= f.label :"Search Intent" %>
+      </br>
+      <%= f.select :search_intent, options_for_select(['enabled', 'disabled']), {:prompt => "Select an option"}, {class: "form-control"}%>
+      </br>
+      <%= f.submit "Generate", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
+</div>
