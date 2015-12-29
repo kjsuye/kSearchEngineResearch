@@ -4,7 +4,7 @@ module SearchHelper
     #code for connecting to google search api
     def self.initialize_search
       @my_search_client = Google::APIClient.new(
-        key: "AIzaSyBm4SI-YBz-XiskkmfZVb5LXvO_jLi8pfQ" , authorization: nil)
+        key: "YOUR_API_KEY_HERE" , authorization: nil)
       @google_search = @my_search_client.discovered_api("customsearch")
 #    response = my_search_client.execute(google_search.cse.list, 'q' => 'hello world')
     end
@@ -14,13 +14,13 @@ module SearchHelper
         self.initialize_search
         @response = @my_search_client.execute(api_method: @google_search.cse.list,
           parameters: {q: query,
-                     key: "AIzaSyBm4SI-YBz-XiskkmfZVb5LXvO_jLi8pfQ",
-                      cx: "000177987223272125020:4z21ktdyx88"})
+                     key: "YOUR_API_KEY_HERE",
+                      cx: "YOUR_CSE_CODE_HERE"})
       else
       @response = @my_search_client.execute(api_method: @google_search.cse.list,
         parameters: {q: query,
-                     key: "AIzaSyBm4SI-YBz-XiskkmfZVb5LXvO_jLi8pfQ",
-                     cx: "000177987223272125020:4z21ktdyx88"})
+                     key: "YOUR_API_KEY_HERE",
+                     cx: "YOUR_CSE_CODE_HERE"})
       end
     end
 
